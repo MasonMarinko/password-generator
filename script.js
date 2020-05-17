@@ -81,9 +81,9 @@ var passwordNumbers = function () {
 
 // Characters var/Function
 var passwordCharacters = function () {
-  var pwdChar = window.confirm('Would you like to have characters in your password? Ok for yes, cancel for no');
+  var pwdChar = window.confirm('Would you like to have special characters in your password? Ok for yes, cancel for no');
   if (pwdChar === false ) {
-    var pwVerify = window.confirm("Are you sure you don't want characters in your password? Ok to confirm (No Characters), cancel to choose again.");
+    var pwVerify = window.confirm("Are you sure you don't want special characters in your password? Ok to confirm (No Special Characters), cancel to choose again.");
     if (pwVerify === false) {
       passwordCharacters();
     } 
