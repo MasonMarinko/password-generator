@@ -36,3 +36,5 @@ SO THAT I can create a strong password that provides greater security
 ## WHEN the password is generated
 ## THEN the password is either displayed in an alert or written to the page
     - The password appears on the page inside the box above Generate Password. If you were to select Generate Password again it would loop to the beginning and start over and allow you to create a new password.
+
+    

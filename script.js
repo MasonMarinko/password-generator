@@ -10,7 +10,7 @@ var genPassword = function() {
   passwordPool = "";
   passwordMake = "";
   passwordMake += letters;
-  alert("Welcome! Answer a few quick questions and we'll have a secure password for you in no time!");
+  alert("Let's get you a new password! Answer these few questions and we'll have a secure password for you in no time!");
   var pwdLength = passwordLength();
 
 // Upper Case Letters Function Call
