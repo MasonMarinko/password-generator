@@ -1,6 +1,4 @@
 // Assignment code here
-
-// for (var i = 0; i < letters.length; i++)
 var letters = "abcdefghijklmnopqrstuvwxyz";
 var upperLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numbers = "123456789";
@@ -8,8 +6,7 @@ var characters = "!#$%&()*+,-./:;<=>?@[]^_`{|}~";
 var passwordPool = '';
 var newPassword = '';
 
-
-
+// Main Function
 var genPassword = function() {
   newPassword = "";
   passwordPool = "";
@@ -18,22 +15,25 @@ var genPassword = function() {
   alert("Welcome! Answer a few quick questions and we'll have a secure password for you in no time!");
   var pwdLength = passwordLength();
 
+// Upper Case Letters Function Call
   var pwdUpper = passwordUpper();
   if (pwdUpper === true) {
     passwordMake += upperLetters;
   }
 
+// Numbers Function Call
   var pwdNumbers = passwordNumbers();
   if (pwdNumbers === true) {
     passwordMake += numbers;
   }
 
+// CharactersFunction Call
   var pwdCharacters = passwordCharacters();
   if (pwdCharacters === true) {
     passwordMake += characters;
   }
+  // Final function, takes in length and possible characters to create final password
   passwordPool = passwordMake.split('');
-  
   for(var i = 0; i < parseInt(pwdLength); i++) {
     newPassword += passwordPool[Math.floor(Math.random() * passwordPool.length)];
   }
@@ -68,7 +68,7 @@ var passwordUpper = function () {
     } 
 }
 
-// Numbers Function 
+// Numbers var/Function 
 var passwordNumbers = function () {
   var pwNumber = window.confirm('Would you like to have numbers in your password? Ok for yes, cancel for no');
   if (pwNumber === false ) {
@@ -81,7 +81,7 @@ var passwordNumbers = function () {
     }
 }
 
-// Characters Function
+// Characters var/Function
 var passwordCharacters = function () {
   var pwdChar = window.confirm('Would you like to have characters in your password? Ok for yes, cancel for no');
   if (pwdChar === false ) {
