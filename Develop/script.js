@@ -3,8 +3,6 @@ var letters = "abcdefghijklmnopqrstuvwxyz";
 var upperLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numbers = "123456789";
 var characters = "!#$%&()*+,-./:;<=>?@[]^_`{|}~";
-var passwordPool = '';
-var newPassword = '';
 
 // Main Function
 var genPassword = function() {
