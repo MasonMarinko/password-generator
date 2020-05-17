@@ -66,11 +66,11 @@ var passwordLength = function() {
   }
 }
 
-// Lowercase Letters Function
+// Lower case Letters Function
 var passwordLower = function () {
-  var pwLower = window.confirm('Would you like to have lowercase letters in your password? Ok for yes, cancel for no');
+  var pwLower = window.confirm('Would you like to have lower-case letters in your password? Ok for yes, cancel for no');
   if (pwLower === false) {
-    var pwVerify = window.confirm("Are you sure you don't want lowercase letters in your password? Ok to confirm (No Lowercase Letters), cancel to choose again.");
+    var pwVerify = window.confirm("Are you sure you don't want lower-case letters in your password? Ok to confirm (No Lower-Case Letters), cancel to choose again.");
     if (pwVerify === false) {
       passwordLower();
     } 
@@ -80,11 +80,11 @@ var passwordLower = function () {
 }
 
 
-// Uppercase Letters Function
+// Upper case Letters Function
 var passwordUpper = function () {
-  var pwUpper = window.confirm('Would you like to have uppercase letters in your password? Ok for yes, cancel for no');
+  var pwUpper = window.confirm('Would you like to have upper-case letters in your password? Ok for yes, cancel for no');
   if (pwUpper === false) {
-    var pwVerify = window.confirm("Are you sure you don't want uppercase letters in your password? Ok to confirm (No Uppercase Letters), cancel to choose again.");
+    var pwVerify = window.confirm("Are you sure you don't want upper-case letters in your password? Ok to confirm (No Upper-Case Letters), cancel to choose again.");
     if (pwVerify === false) {
       passwordUpper();
     } 
