@@ -7,9 +7,10 @@ var characters = "!#$%&()*+,-./:;<=>?@[]^_`{|}~";
 // Main Function
 var genPassword = function() {
   newPassword = "";
-  passwordPool = "";
   passwordMake = "";
+  paswordPool = "";
   alert("Let's get you a new password! Answer these few questions and we'll have a secure password for you in no time!");
+
   var pwdLength = passwordLength();
 
 // Lower Case Letters Function Call
@@ -40,8 +41,7 @@ var genPassword = function() {
   if (passwordMake === "") {
     alert ("You have no criteria for your password. Lets start over, please make sure to choose at least 1 item for your password.");
     genPassword();
-  }
-
+  };
 
   // Final function, takes in length and possible characters to create final password
   passwordPool = passwordMake.split('');
@@ -52,18 +52,19 @@ var genPassword = function() {
 
 // Password Length Function
 var passwordLength = function() {
-  var pwLength = parseInt(prompt('How many characters would you like your password to be? \nPlease choose a number between 8 and 128'));
+  var pwLength = prompt('How many characters would you like your password to be? \nPlease choose a number between 8 and 128');
   if (pwLength >= 8 && pwLength <= 128 && pwLength != null) {
     var pwVerify = window.confirm("Are you sure you'd like to select " + pwLength + '? Ok for yes, cancel for no');
     if (pwVerify === false) { 
       passwordLength();
-    } 
-  return pwLength;
-  }
-  else {
-    alert("You've chosen an incorrect option, please enter a valid selection between 8 and 128");
-    passwordLength();
-  }
+    }
+    if (pwVerify === true) {
+      return pwLength;
+    }
+} else {
+alert("You've chosen an incorrect option, please enter a valid selection between 8 and 128");
+passwordLength();
+}
 }
 
 // Lower case Letters Function
