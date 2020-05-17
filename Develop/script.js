@@ -9,7 +9,7 @@ var genPassword = function() {
   newPassword = "";
   passwordPool = "";
   passwordMake = "";
-  passwordMake = letters;
+  passwordMake += letters;
   alert("Welcome! Answer a few quick questions and we'll have a secure password for you in no time!");
   var pwdLength = passwordLength();
 
