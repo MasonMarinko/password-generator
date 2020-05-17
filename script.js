@@ -9,9 +9,14 @@ var genPassword = function() {
   newPassword = "";
   passwordPool = "";
   passwordMake = "";
-  passwordMake += letters;
   alert("Let's get you a new password! Answer these few questions and we'll have a secure password for you in no time!");
   var pwdLength = passwordLength();
+
+// Lower Case Letters Function Call
+  var pwdLower = passwordLower();
+  if (pwdLower === true) {
+    passwordMake += letters;
+  }
 
 // Upper Case Letters Function Call
   var pwdUpper = passwordUpper();
@@ -30,6 +35,14 @@ var genPassword = function() {
   if (pwdCharacters === true) {
     passwordMake += characters;
   }
+
+// Make sure that something was selected, otherwise begin again.
+  if (passwordMake === "") {
+    alert ("You have no criteria for your password. Lets start over, please make sure to choose at least 1 item for your password.");
+    genPassword();
+  }
+
+
   // Final function, takes in length and possible characters to create final password
   passwordPool = passwordMake.split('');
   for(var i = 0; i < parseInt(pwdLength); i++) {
@@ -52,6 +65,20 @@ var passwordLength = function() {
     passwordLength();
   }
 }
+
+// Lowercase Letters Function
+var passwordLower = function () {
+  var pwLower = window.confirm('Would you like to have lowercase letters in your password? Ok for yes, cancel for no');
+  if (pwLower === false) {
+    var pwVerify = window.confirm("Are you sure you don't want lowercase letters in your password? Ok to confirm (No Lowercase Letters), cancel to choose again.");
+    if (pwVerify === false) {
+      passwordLower();
+    } 
+  } else {
+    return pwdLower = true;
+    } 
+}
+
 
 // Uppercase Letters Function
 var passwordUpper = function () {
