@@ -1,10 +1,12 @@
+Repository Website: https://github.com/MasonMarinko/password-generator
+
+Live Website: https://masonmarinko.github.io/password-generator/
+
 # Password Generator Starter Code
 
 AS AN employee with access to sensitive data
 I WANT to randomly generate a password that meets certain criteria
 SO THAT I can create a strong password that provides greater security
-
-
 
 # GIVEN I need a new, secure password
     - Once loaded the website presents with a title "Password Generator", a secondary header "Generate a Password", a box with text that reads "Your Secure Password" then a button labeled "Generate Password". Once the Generate Password button is selected it will lead you through a series of questions that will decide the criteria of your password. This includes letters by default, so they will have some password if they say no to all. Questions include length, characters (Yes/No), upper case letters (Yes/No) and Numbers (Yes/No). In the end, once all questions have been exhausted a new password will be shown in the box.
