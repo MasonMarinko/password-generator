@@ -8,7 +8,7 @@ var characters = "!#$%&()*+,-./:;<=>?@[]^_`{|}~";
 var genPassword = function() {
   newPassword = "";
   passwordMake = "";
-  paswordPool = "";
+  passwordPool = "";
   alert("Let's get you a new password! Answer these few questions and we'll have a secure password for you in no time!");
 
   var pwdLength = passwordLength();
@@ -31,7 +31,7 @@ var genPassword = function() {
     passwordMake += numbers;
   }
 
-// CharactersFunction Call
+// Characters Function Call
   var pwdCharacters = passwordCharacters();
   if (pwdCharacters === true) {
     passwordMake += characters;
@@ -52,42 +52,40 @@ var genPassword = function() {
 
 // Password Length Function
 var passwordLength = function() {
-  var pwLength = prompt('How many characters would you like your password to be? \nPlease choose a number between 8 and 128');
-  if (pwLength >= 8 && pwLength <= 128 && pwLength != null) {
-    var pwVerify = window.confirm("Are you sure you'd like to select " + pwLength + '? Ok for yes, cancel for no');
-    if (pwVerify === false) { 
-      passwordLength();
+  var pwLength = parseInt(prompt('How many characters would you like your password to be? \nPlease choose a number between 8 and 128'));
+  if (pwLength >= 8 && pwLength <= 128) {
+    var pwVerify =  confirm("Are you sure you'd like to have " + pwLength + " characters in your password?");
+    if (pwVerify) {
+    return pwLength;
+    } else {
+      return passwordLength();
     }
-    if (pwVerify === true) {
-      return pwLength;
-    }
-} else {
-alert("You've chosen an incorrect option, please enter a valid selection between 8 and 128");
-passwordLength();
-}
-}
+  } else {
+    alert("You've chosen an incorrect option, please enter a valid selection between 8 and 128")
+    return passwordLength();
+  };
+};
 
 // Lower case Letters Function
 var passwordLower = function () {
-  var pwLower = window.confirm('Would you like to have lower-case letters in your password? Ok for yes, cancel for no');
+  var pwLower = window.confirm('Would you like to have lower case letters in your password? Ok for yes, cancel for no');
   if (pwLower === false) {
-    var pwVerify = window.confirm("Are you sure you don't want lower-case letters in your password? Ok to confirm (No Lower-Case Letters), cancel to choose again.");
+    var pwVerify = window.confirm("Are you sure you don't want lower case letters in your password? Ok to confirm (No lower case letters), cancel to choose again.");
     if (pwVerify === false) {
-      passwordLower();
+      return passwordLower();
     } 
   } else {
     return pwdLower = true;
     } 
 }
 
-
 // Upper case Letters Function
 var passwordUpper = function () {
-  var pwUpper = window.confirm('Would you like to have upper-case letters in your password? Ok for yes, cancel for no');
+  var pwUpper = window.confirm('Would you like to have upper case letters in your password? Ok for yes, cancel for no');
   if (pwUpper === false) {
-    var pwVerify = window.confirm("Are you sure you don't want upper-case letters in your password? Ok to confirm (No Upper-Case Letters), cancel to choose again.");
+    var pwVerify = window.confirm("Are you sure you don't want upper case letters in your password? Ok to confirm (No upper Case letters), cancel to choose again.");
     if (pwVerify === false) {
-      passwordUpper();
+      return passwordUpper();
     } 
   } else {
     return pwdUpper = true;
@@ -100,7 +98,7 @@ var passwordNumbers = function () {
   if (pwNumber === false ) {
     var pwVerify = window.confirm("Are you sure you don't want numbers in your password? Ok to confirm (No Numbers), cancel to choose again.");
     if (pwVerify === false) {
-      passwordNumbers();
+      return passwordNumbers();
     }
   } else {
     return pwdNumbers = true;
@@ -113,7 +111,7 @@ var passwordCharacters = function () {
   if (pwdChar === false ) {
     var pwVerify = window.confirm("Are you sure you don't want special characters in your password? Ok to confirm (No Special Characters), cancel to choose again.");
     if (pwVerify === false) {
-      passwordCharacters();
+      return passwordCharacters();
     } 
   } else {
   return pwdCharacters = true;
