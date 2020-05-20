@@ -5,7 +5,7 @@ var numbers = "123456789";
 var characters = "!#$%&()*+,-./:;<=>?@[]^_`{|}~";
 
 // Main Function
-var genPassword = function() {
+var genPassword = function () {
   newPassword = "";
   passwordMake = "";
   passwordPool = "";
@@ -13,50 +13,50 @@ var genPassword = function() {
 
   var pwdLength = passwordLength();
 
-// Lower Case Letters Function Call
+  // Lower Case Letters Function Call
   var pwdLower = passwordLower();
   if (pwdLower === true) {
     passwordMake += letters;
   }
 
-// Upper Case Letters Function Call
+  // Upper Case Letters Function Call
   var pwdUpper = passwordUpper();
   if (pwdUpper === true) {
     passwordMake += upperLetters;
   }
 
-// Numbers Function Call
+  // Numbers Function Call
   var pwdNumbers = passwordNumbers();
   if (pwdNumbers === true) {
     passwordMake += numbers;
   }
 
-// Characters Function Call
+  // Characters Function Call
   var pwdCharacters = passwordCharacters();
   if (pwdCharacters === true) {
     passwordMake += characters;
   }
 
-// Make sure that something was selected, otherwise begin again.
+  // Make sure that something was selected, otherwise begin again.
   if (passwordMake === "") {
-    alert ("You have no criteria for your password. Lets start over, please make sure to choose at least 1 item for your password.");
-    genPassword();
+    alert("You have no criteria for your password. Lets start over, please make sure to choose at least 1 item for your password.");
+    return genPassword();
   };
 
   // Final function, takes in length and possible characters to create final password
   passwordPool = passwordMake.split('');
-  for(var i = 0; i < parseInt(pwdLength); i++) {
+  for (var i = 0; i < parseInt(pwdLength); i++) {
     newPassword += passwordPool[Math.floor(Math.random() * passwordPool.length)];
   }
 }
 
 // Password Length Function
-var passwordLength = function() {
+var passwordLength = function () {
   var pwLength = parseInt(prompt('How many characters would you like your password to be? \nPlease choose a number between 8 and 128'));
   if (pwLength >= 8 && pwLength <= 128) {
-    var pwVerify =  confirm("Are you sure you'd like to have " + pwLength + " characters in your password?");
+    var pwVerify = confirm("Are you sure you'd like to have " + pwLength + " characters in your password?");
     if (pwVerify) {
-    return pwLength;
+      return pwLength;
     } else {
       return passwordLength();
     }
@@ -73,10 +73,10 @@ var passwordLower = function () {
     var pwVerify = window.confirm("Are you sure you don't want lower case letters in your password? Ok to confirm (No lower case letters), cancel to choose again.");
     if (pwVerify === false) {
       return passwordLower();
-    } 
+    }
   } else {
     return pwdLower = true;
-    } 
+  }
 }
 
 // Upper case Letters Function
@@ -86,45 +86,45 @@ var passwordUpper = function () {
     var pwVerify = window.confirm("Are you sure you don't want upper case letters in your password? Ok to confirm (No upper Case letters), cancel to choose again.");
     if (pwVerify === false) {
       return passwordUpper();
-    } 
+    }
   } else {
     return pwdUpper = true;
-    } 
+  }
 }
 
 // Numbers var/Function 
 var passwordNumbers = function () {
   var pwNumber = window.confirm('Would you like to have numbers in your password? Ok for yes, cancel for no');
-  if (pwNumber === false ) {
+  if (pwNumber === false) {
     var pwVerify = window.confirm("Are you sure you don't want numbers in your password? Ok to confirm (No Numbers), cancel to choose again.");
     if (pwVerify === false) {
       return passwordNumbers();
     }
   } else {
     return pwdNumbers = true;
-    }
+  }
 }
 
 // Characters var/Function
 var passwordCharacters = function () {
   var pwdChar = window.confirm('Would you like to have special characters in your password? Ok for yes, cancel for no');
-  if (pwdChar === false ) {
+  if (pwdChar === false) {
     var pwVerify = window.confirm("Are you sure you don't want special characters in your password? Ok to confirm (No Special Characters), cancel to choose again.");
     if (pwVerify === false) {
       return passwordCharacters();
-    } 
+    }
   } else {
-  return pwdCharacters = true;
-  } 
+    return pwdCharacters = true;
+  }
 }
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
- function writePassword() {
-   // var password = generatePassword();
-   var passwordText = document.querySelector("#password");
+function writePassword() {
+  // var password = generatePassword();
+  var passwordText = document.querySelector("#password");
 
   passwordText.value = newPassword;
 }
